@@ -7,8 +7,8 @@ class PedidosModel{
         console.debug("Conectado")
     }
 
-    create(desc_ped,id_cliente){
-        let sql = `INSERT INTO pedidos (desc_ped,id_cliente) VALUES("${desc_ped}","${id_cliente}");`
+    create(desc_ped,valor_total,id_cliente){
+        let sql = `INSERT INTO pedidos (desc_ped,valor_total,id_cliente) VALUES("${desc_ped}",${valor_total},"${id_cliente}");`
 
         return new Promise((resolve,reject)=>{
             this.conexao.query(sql,(erro,retorno)=>{
@@ -37,8 +37,8 @@ class PedidosModel{
 
         });
     }
-    update(id_pedido,desc_ped,id_cliente){
-        let sql = `UPDATE pedidos SET desc_ped="${desc_ped}", id_cliente="${id_cliente}" WHERE id_pedido="${id_pedido}";`
+    update(desc_ped,valor_total,id_cliente,id_pedido){
+        let sql = `UPDATE pedidos SET desc_ped="${desc_ped}", valor_total=${valor_total}, id_cliente="${id_cliente}" WHERE id_pedido="${id_pedido}";`
         return new Promise((resolve,reject)=>{
             this.conexao.query(sql,(erro,retorno)=>{
                 if(erro){

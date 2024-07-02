@@ -14,15 +14,15 @@ INSERT INTO clientes(nome_cliente,endereco) VALUES
 CREATE TABLE pedidos(
 id_pedido INT PRIMARY KEY AUTO_INCREMENT,
 desc_ped VARCHAR(45) NOT NULL,
-valor_total INT NOT NULL,
+valor_total FLOAT NOT NULL,
 id_cliente INT NOT NULL,
 FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
 );
 
 INSERT INTO pedidos(id_cliente,desc_ped,valor_total) VALUES
-(2, "Bolo de Leite Ninho", 30),
-(3, "Pavê de Paçoca", 60),
-(4, "Torta de Morango", 40);
+(2, "Bolo de Leite Ninho", 45 ),
+(3, "Pavê de Paçoca", 32.50 ),
+(4, "Torta de Morango", 25.40 );
 
 SELECT * FROM clientes;
 
