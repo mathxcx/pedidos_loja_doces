@@ -31,3 +31,4 @@ SELECT * FROM pedidos;
 drop table pedidos;
 
 drop table clientes;
+
